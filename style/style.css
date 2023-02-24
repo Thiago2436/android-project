@@ -1,0 +1,236 @@
+@charset "UTF-8";
+
+/*Me 'Android' palette
+#0CCFEB
+#0CF5D2
+#00DF7F
+#0CF54E
+#0CEB0C
+
+Guanabara's:
+#c5ebd6
+#83e1ad
+#3ddc84
+#2fa866
+#1a5c37
+#063d1e
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+
+:root {
+   --colour0: #c5ebd6;
+   --colour1: #83e1ad;
+   --colour2: #3ddc84;
+   --colour3: #2fa866;
+   --colour4: #1a5c37;
+   --colour5: #063d1e;
+
+   --defaul-font: Arial, Verdana, Helvetica, sans-serif;
+   --highlight-font: 'Bebas Neue', cursive;
+   --android-font: 'Android', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0 auto;
+}
+
+body {
+    /*background-color: var(--colour0);*/
+    background-color: #ebe5c5;
+    font-family: var(--defaul-font);
+}
+
+a.link-external::after {
+    content: '\00A0\1F517';
+}
+
+
+header {
+    background-image: linear-gradient(to bottom, var(--colour2), var(--colour4));
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+header > h1 {
+    color: white;
+    font-family: var(--highlight-font);
+    font-size: 3em;
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.267);
+}
+
+header > p {
+    font-family: var(--defaul-font);
+    font-size: 1.2em;
+    color: white;
+    max-width: 500px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: auto;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.315);
+}
+
+nav {
+    background-color: var(--colour5);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.192);
+}
+
+nav > a {
+    color: var(--colour0);
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: .5s;/*This determines how long it's going to take to get the a:hover effect activated. In this case, it's going to take half a second. */
+}
+
+nav > a:hover {
+    background-color: var(--colour2);
+    color: var(--colour5);
+    /*border-radius: 5px; it's possible to place it here instead of in the nav > a one.*/
+}
+
+main {
+    background-color: white;
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.375);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/*.overview-content {
+    font-family: var(--android-font);
+}*/
+
+main img {
+    width: 100%;
+}
+
+main img.small {
+    display: block;
+    max-width: 350px;
+    margin: auto;
+}
+
+main h1 {
+    color: var(--colour5);
+    font-family: var(--android-font);
+    font-weight: normal;
+    font-size: 1.8em;
+}
+
+main h4 {
+    font-family: var(--android-font);
+    font-size: 1.4em;
+}
+
+main h2 {
+    font-family: var(--android-font);
+    color: var(--colour4);
+    font-size: 1.3em;
+    font-weight: normal;
+    background-image: linear-gradient(to right, var(--colour1), transparent);
+    text-indent: 8px;
+}
+
+
+main p {
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    font-size: 1em;
+    line-height: 2em;
+}
+
+main strong {
+    color: var(--colour2);
+    font-weight: bolder;    
+}
+
+main a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--colour5);
+    background-color: var(--colour1);
+    padding: 2px 6px;
+}
+
+main a:hover {
+    text-decoration: underline;
+    color: var(--colour3);
+}
+
+div.video {
+    background-color: var(--colour4);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 59%;
+    position: relative;
+}
+
+div.video > iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+aside {
+    background-color: var(--colour2);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.279);
+}
+
+aside h3 {
+    background-color: var(--colour5);
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px;/*top, right and left -10px; bottom 0px. -10px was used here in order to fill up the gaps at the top of this box with the colour5*/
+    border-radius: 10px 10px 0px 0px;/*top-left and right get 10px, whilst the bottom ones get 0px*/
+}
+
+aside > ul {
+    /*list-style-position: inside; this is Guanabara's. I've used the global reset padding: 0 auto; and it does look better*/
+    list-style-type: '\2714\00A0\00A0';/*\ 2417 is the code for the tick symbol. 00A0 is a non-breaking space. As for \00a0 , it is hex code for a non-breaking space. Though interesting, it's not compatible with all the browsers. Luckily, it works like a charm with Google Chrome :) */
+    columns: 2;
+    
+}
+
+footer {
+    background-color: var(--colour5);
+    color: white;
+    text-align: center;
+    font-size: .8em;
+    padding: 5px;
+}
+
+footer a /*> p > a*/{
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--colour2);
+}
